@@ -1,0 +1,11 @@
+<h1>Witaj w swoim CurriculumVirtuale!</h1><br>
+<h2>Twoje CV:</h2><br>
+<ul>
+  <% @articles.each do |article| %>
+    <li>
+      <%= link_to article.title, article %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Utwórz nowe CV", new_article_path %>

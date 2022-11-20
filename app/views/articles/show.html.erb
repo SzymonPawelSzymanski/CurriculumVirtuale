@@ -1,0 +1,15 @@
+<h1><%= @article.title %></h1>
+<h2>Właściciel: <%= @article.owner %></h2>
+<p>ID CV:<%= @article.cv_id %>
+UNIQ ID: <%= @article.uniq_id %></p>
+
+<ul>
+  <li><%= link_to "Edytuj CV", edit_article_path(@article) %></li>
+  <li><%= link_to "Usuń CV", article_path(@article), data: {
+    turbo_method: :delete,
+    turbo_confirm: "Na pewno chcesz usunąć to CV?"
+  } %></li>
+</ul>
+
+<br>
+<%= link_to "Powrót do strony głównej", root_path %>

@@ -1,0 +1,6 @@
+<h1><%= @user %></h1>
+<ul>
+  <%= link_to "Destroy", admin_destroy_user_path(@user), method: :delete, data: { confirm: "You sure?" } %>
+</ul>
+<br>
+<%= link_to "Powrót do strony głównej", root_path %>

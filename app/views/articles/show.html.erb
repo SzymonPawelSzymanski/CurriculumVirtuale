@@ -1,7 +1,11 @@
 <h1><%= @article.title %></h1>
-<h2>Właściciel: <%= @article.owner %></h2>
-<p>ID CV:<%= @article.cv_id %>
-UNIQ ID: <%= @article.uniq_id %></p>
+<% @user = User.find_by(id: @article.user_id) %>
+<p>Autor: <%= @user.email %></p>
+
+<h2>Doświadczenie zawodowe</h2>
+<%= render partial: "experiences/show_exp" %>
+<%= link_to "Dodaj doświadczenie", add_stuff_article_path(@article) %>
+
 
 <ul>
   <li><%= link_to "Edytuj CV", edit_article_path(@article) %></li>

@@ -5,6 +5,13 @@ Rails.application.routes.draw do
 
   match 'users/:id' => 'users#destroy', :via => :delete, :as => :admin_destroy_user
 
-  resources :articles
+  get "article/:id/add_stuff" => "articles#add_stuff", :as => "add_stuff_article"
+
+  resources :articles do
+    resources :experiences
+    resources :duties
+    resources :users
+  end
+
   resources :users
 end

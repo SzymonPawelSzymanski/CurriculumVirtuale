@@ -1,0 +1,14 @@
+<h2>Dane Kontaktowe: </h2>
+  <p>
+    <% Array(local_user.contact_info).each_with_index do |user| %>
+      <strong>Imię i nazwisko:</strong>
+      <%= user.name%>
+      <%= user.surname%><br>
+      <strong>E-mail:</strong>
+      <%= user.email%><br>
+      <strong>Telefon:</strong>
+      <%= user.phone%><br>
+      <strong>Adres:</strong>
+      <%= user.address%>
+    <% end %>
+  </p>

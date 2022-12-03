@@ -3,6 +3,7 @@
 <p> Jesteś adminem szefie!</p>
   <%= link_to "Lista użytkowników ", users_path %>
 <%  end %>
+
 <h2>Twoje CV:</h2>
 <ul>
   <%@current_user_articles = @articles.where(user_id: current_user.id) %>

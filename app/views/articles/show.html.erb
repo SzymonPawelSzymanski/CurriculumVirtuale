@@ -2,9 +2,12 @@
 <% @user = User.find_by(id: @article.user_id) %>
 <p>Autor: <%= @user.email %></p>
 
+<%= link_to "Edytuj swoje dane", add_stuff_article_path(@article) %>
+
+<%= render partial: "contact_infos/show_contact_infos", locals: { local_user: current_user } %>
+
 <h2>Doświadczenie zawodowe</h2>
 <%= render partial: "experiences/show_exp" %>
-<%= link_to "Dodaj doświadczenie", add_stuff_article_path(@article) %>
 
 
 <ul>

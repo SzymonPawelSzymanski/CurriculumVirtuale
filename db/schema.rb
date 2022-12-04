@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_01_214753) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_03_235741) do
   create_table "articles", force: :cascade do |t|
     t.integer "user_id"
     t.string "title"
@@ -48,7 +48,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_01_214753) do
     t.date "begin_date"
     t.date "finish_date"
     t.boolean "currently"
-    t.text "duties"
+    t.text "job_duties"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["article_id"], name: "index_experiences_on_article_id"

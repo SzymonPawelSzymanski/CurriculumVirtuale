@@ -1,22 +1,14 @@
 <h1><%= @article.title %></h1>
-<% @user = User.find_by(id: @article.user_id) %>
-<p>Autor: <%= @user.email %></p>
+<%= link_to "Edytuj nazwę CV", edit_article_path(@article) %> |
+<%= link_to "Usuń CV", article_path(@article), data: {
+    turbo_method: :delete,
+    turbo_confirm: "Na pewno chcesz usunąć to CV?"
+  } %>
 
-<%= link_to "Edytuj swoje dane", add_stuff_article_path(@article) %>
+<% @user = User.find_by(id: @article.user_id) %>
 
 <%= render partial: "contact_infos/show_contact_infos", locals: { local_user: current_user } %>
+<%= link_to "Dodaj dane do swojego CV", add_stuff_article_path(@article) %>
 
 <h2>Doświadczenie zawodowe</h2>
 <%= render partial: "experiences/show_exp" %>
-
-
-<ul>
-  <li><%= link_to "Edytuj CV", edit_article_path(@article) %></li>
-  <li><%= link_to "Usuń CV", article_path(@article), data: {
-    turbo_method: :delete,
-    turbo_confirm: "Na pewno chcesz usunąć to CV?"
-  } %></li>
-</ul>
-
-<br>
-<%= link_to "Powrót do strony głównej", root_path %>

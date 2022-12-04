@@ -1,0 +1,28 @@
+<%#= render partial: "contact_infos/add_contact_info", locals: { local_user: current_user }  %>
+<h2>Edytuj swoje dane i informacje kontaktowe:</h2>
+<% @user = current_user %>
+<%= form_with model: [ @user, @user.contact_info] do |user| %>
+  <p>
+    <%= user.label "Imię: " %><br>
+    <%= user.text_field :name %>
+  </p>
+  <p>
+    <%= user.label "Nazwisko" %><br>
+    <%= user.text_field :surname %>
+  </p>
+  <p>
+    <%= user.label "Nr telefonu" %><br>
+    <%= user.number_field :phone %>
+  </p>
+  <p>
+    <%= user.label "E-mail:" %><br>
+    <%= user.text_field :email %>
+  </p>
+  <p>
+    <%= user.label "Adres: " %><br>
+    <%= user.text_field :address %>
+  </p>
+  <p>
+    <%= user.submit %>
+  </p>
+<% end %>

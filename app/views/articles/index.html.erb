@@ -4,6 +4,8 @@
   <%= link_to "Lista użytkowników ", users_path %>
 <%  end %>
 
+<%= link_to "Edytuj swoje dane kontaktowe", index_contact_infos_path %>
+
 <h2>Twoje CV:</h2>
 <ul>
   <%@current_user_articles = @articles.where(user_id: current_user.id) %>

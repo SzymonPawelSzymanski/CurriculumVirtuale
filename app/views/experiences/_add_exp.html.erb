@@ -20,9 +20,11 @@
     <%= form.label "Pracuję tam obecnie" %><br>
     <%= form.check_box :currently %>
   </p>
-<!--  <p>-->
+  <p>
 <!--    <%# render partial: "duties/add_duty" %><br>-->
-<!--  </p>-->
+    <%= form.label "Obowiązki:" %><br>
+    <%= form.text_area :job_duties %>
+  </p>
   <p>
     <%= form.submit %>
   </p>

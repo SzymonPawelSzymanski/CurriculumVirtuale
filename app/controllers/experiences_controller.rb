@@ -1,4 +1,7 @@
 class ExperiencesController < ApplicationController
+  def new
+    @article = Article.find(params[:article_id])
+  end
   def create
     @article = Article.find(params[:article_id])
     @experience = @article.experiences.create(experience_params)

@@ -13,6 +13,10 @@ Rails.application.routes.draw do
     resources :experiences
     resources :duties
     resources :users
+    resources :educations
+    resources :languages
+    resources :skills
+    resources :interests
   end
 
   resources :users do

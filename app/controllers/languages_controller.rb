@@ -1,25 +1,25 @@
-class ExperiencesController < ApplicationController
+class LanguagesController < ApplicationController
   def new
     @article = Article.find(params[:article_id])
   end
   def create
     @article = Article.find(params[:article_id])
-    @experience = @article.experiences.create(experience_params)
+    @language = @article.languages.create(language_params)
     redirect_to article_path(@article)
   end
   def edit
     @article = Article.find(params[:article_id])
-    @experience = @article.experiences.create(experience_params)
+    @language = @article.languages.create(language_params)
   end
   def destroy
     @article = Article.find(params[:article_id])
-    @experience = @article.experiences.find(params[:id])
-    @experience.destroy
+    @language = @article.languages.find(params[:id])
+    @language.destroy
     redirect_to article_path(@article), status: :see_other
   end
 
   private
-  def experience_params
-    params.require(:experience).permit!
+  def language_params
+    params.require(:language).permit!
   end
 end

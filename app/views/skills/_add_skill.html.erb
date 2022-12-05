@@ -1,0 +1,10 @@
+<h2>Dodaj umiejętności:</h2>
+<%= form_with model: [ @article, @article.skills.build ] do |form| %>
+  <p>
+    <%= form.label "Umiejętność" %><br>
+    <%= form.text_field :skill %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

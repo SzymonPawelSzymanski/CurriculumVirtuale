@@ -1,25 +1,25 @@
-class ExperiencesController < ApplicationController
+class InterestsController < ApplicationController
   def new
     @article = Article.find(params[:article_id])
   end
   def create
     @article = Article.find(params[:article_id])
-    @experience = @article.experiences.create(experience_params)
+    @interest = @article.interests.create(interest_params)
     redirect_to article_path(@article)
   end
   def edit
     @article = Article.find(params[:article_id])
-    @experience = @article.experiences.create(experience_params)
+    @interest = @article.interests.create(interest_params)
   end
   def destroy
     @article = Article.find(params[:article_id])
-    @experience = @article.experiences.find(params[:id])
-    @experience.destroy
+    @interest = @article.interests.find(params[:id])
+    @interest.destroy
     redirect_to article_path(@article), status: :see_other
   end
 
   private
-  def experience_params
-    params.require(:experience).permit!
+  def interest_params
+    params.require(:interest).permit!
   end
 end

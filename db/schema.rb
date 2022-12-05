@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_03_235741) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_05_203341) do
   create_table "articles", force: :cascade do |t|
     t.integer "user_id"
     t.string "title"
@@ -41,6 +41,21 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_03_235741) do
     t.index ["experience_id"], name: "index_duties_on_experience_id"
   end
 
+  create_table "educations", force: :cascade do |t|
+    t.integer "article_id"
+    t.string "school"
+    t.string "field_of_study"
+    t.string "specialization"
+    t.string "title"
+    t.date "begin_date"
+    t.date "finish_date"
+    t.boolean "currently"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "if_university"
+    t.index ["article_id"], name: "index_educations_on_article_id"
+  end
+
   create_table "experiences", force: :cascade do |t|
     t.integer "article_id"
     t.string "worked_as"
@@ -54,6 +69,24 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_03_235741) do
     t.index ["article_id"], name: "index_experiences_on_article_id"
   end
 
+  create_table "interests", force: :cascade do |t|
+    t.integer "article_id"
+    t.string "interest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["article_id"], name: "index_interests_on_article_id"
+  end
+
+  create_table "languages", force: :cascade do |t|
+    t.integer "article_id"
+    t.string "language"
+    t.string "speaking_level"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "writing_level"
+    t.index ["article_id"], name: "index_languages_on_article_id"
+  end
+
   create_table "models", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -64,6 +97,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_03_235741) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_models_on_email", unique: true
     t.index ["reset_password_token"], name: "index_models_on_reset_password_token", unique: true
+  end
+
+  create_table "skills", force: :cascade do |t|
+    t.integer "article_id"
+    t.string "skill"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["article_id"], name: "index_skills_on_article_id"
   end
 
   create_table "users", force: :cascade do |t|

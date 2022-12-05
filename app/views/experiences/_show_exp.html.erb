@@ -1,7 +1,7 @@
 <% @article.experiences.each do |experience| %>
   <ul>
     <strong><%= experience.worked_as %></strong><br>
-    "Firma: " <%= experience.company %><br>
+    <%= experience.company %><br>
   <%= experience.begin_date %> -
   <%= experience.finish_date %><br>
   <% if experience.currently %>

@@ -1,0 +1,18 @@
+<h2>Dodaj języki:</h2>
+<%= form_with model: [ @article, @article.languages.build ] do |form| %>
+  <p>
+    <%= form.label "Język" %><br>
+    <%= form.text_field :language %>
+  </p>
+  <p>
+    <%= form.label "Poziom w mowie:" %><br>
+    <%= form.text_field :speaking_level %>
+  </p>
+  <p>
+    <%= form.label "Poziom w piśmie:" %><br>
+    <%= form.text_field :writing_level %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

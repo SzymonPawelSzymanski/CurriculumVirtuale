@@ -10,5 +10,13 @@
 <%= render partial: "contact_infos/show_contact_infos", locals: { local_user: current_user } %>
 <%= link_to "Dodaj dane do swojego CV", add_stuff_article_path(@article) %>
 
-<h2>Doświadczenie zawodowe</h2>
+<h3>Doświadczenie zawodowe</h3>
 <%= render partial: "experiences/show_exp" %>
+<h3>Edukacja</h3>
+<%= render partial: "educations/show_education" %>
+<h3>Języki</h3>
+<%= render partial: "languages/show_lang" %>
+<h3>Umiejętności</h3>
+<%= render partial: "skills/show_skill" %>
+<h3>Zainteresowania:</h3>
+<%= render partial: "interests/show_interest" %>

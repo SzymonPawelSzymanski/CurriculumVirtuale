@@ -1,0 +1,27 @@
+.login_screen {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    font-size: 25px;
+    margin-top: -10px;
+}
+
+.register_links {
+    text-align: center;
+    margin: 10px;
+    transform: scale(0.8);
+}
+
+.register_links :hover {
+    text-decoration: none;
+    color: white;
+}
+
+.alert {
+    position: absolute;
+    margin-top: -80px;
+    margin-bottom: 20px;
+}
+.alert-danger {
+    margin-bottom: 2rem;
+}

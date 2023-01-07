@@ -1,16 +1,18 @@
 <% @article.educations.each do |education| %>
-  <ul>
-    <strong><%= education.school %></strong><br>
-     <%= education.field_of_study %><br>
-    <%= education.specialization %>
-    <%= education.begin_date %> -
-    <%= education.finish_date %><br>
-    <% if education.currently %>
-      Studiuję/uczę się tam obecnie.
-    <% end %><br><br>
-    <%= link_to "Usuń edukację", [education.article, education], data: {
-      turbo_method: :delete,
-      turbo_confirm: "Na pewno chcesz usunąć tą edukację?"
-    } %> <br>
-  </ul>
+  <% if education.school != nil %>
+    <div class="stuff_box">
+      <strong><%= education.school %></strong><br>
+      <%= education.field_of_study %><br>
+      <%= education.specialization %><br>
+      <%= education.begin_date %> -
+      <%= education.finish_date %><br>
+      <% if education.currently %>
+        Studiuję/uczę się tam obecnie.
+      <% end %><br><br>
+      <%= link_to "Usuń edukację", [education.article, education], class: "delete_stuff_button", data: {
+        turbo_method: :delete,
+        turbo_confirm: "Na pewno chcesz usunąć tą edukację?"
+      } %> <br>
+    </div>
+  <% end %>
 <% end %>

@@ -1,0 +1,163 @@
+.user_show_cv{
+
+}
+
+.edit_delete_button{
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #5643CC;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 7px #999;
+    margin-bottom: 10px;
+}
+
+.user_show_cv h1{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+    text-align: center;
+}
+
+/*.user_show_cv a{*/
+/*    font-family: 'Roboto Condensed', sans-serif;*/
+/*    font-weight: bold;*/
+/*    font-size: 20px;*/
+/*    text-align: center;*/
+/*    text-decoration: none;*/
+/*}*/
+
+.edit_delete_cv{
+    text-align: center;
+    margin-top: -20px;
+}
+
+.edit_delete_cv :hover {
+    background-color: #673FA0;
+    text-decoration: none;
+    color: white;
+}
+
+.edit_delete_cv :active {
+    background-color: #455EB5;
+    color: white;
+    box-shadow: 1px 5px 4px #666;
+    transform: translateY(4px);
+}
+
+.big_button{
+    background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    flex-shrink: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    height: 4rem;
+    padding: 1rem 1.6rem;
+    text-align: center;
+    text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+    transition: all .5s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+
+.contact_infos{
+    text-align: center;
+    margin: 20px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 25px;
+}
+
+.popup{
+    width: 97%;
+    background-color: #666666;
+    top: 0;
+    left: 90%;
+    transform: scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    visibility: hidden;
+    transition: transform 0.2s, top 0.2s;
+}
+
+.open-popup{
+    visibility: visible;
+    top: 10%;
+    transform: scale(1);
+}
+
+.close-popud{
+    visibility: hidden;
+    transform: scale(0.5);
+}
+
+.close_popup_btn {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #93329E;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 7px #999;
+    margin-bottom: 10px;
+}
+
+.add_stuff {
+    border-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+    border-width: medium;
+}
+
+.stuff_box {
+    background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    border-radius: 15px;
+    color: white;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.stuff_header {
+    font-weight: bold;
+}
+
+.delete_stuff_button {
+    background-color: white;
+    color: #455EB5;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 5px;
+    text-decoration: none!important;
+    border-radius: 15px;
+}
+
+.delete_stuff_button :hover {
+    text-decoration: none!important;
+    color: #455EB5!important;
+
+}
+
+.delete_stuff_button :active {
+    text-decoration: none;
+    color: #455EB5;
+
+}

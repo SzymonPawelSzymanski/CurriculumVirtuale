@@ -1,22 +1,145 @@
-<h1><%= @article.title %></h1>
-<%= link_to "Edytuj nazwę CV", edit_article_path(@article) %> |
-<%= link_to "Usuń CV", article_path(@article), data: {
-    turbo_method: :delete,
-    turbo_confirm: "Na pewno chcesz usunąć to CV?"
-  } %>
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</head>
+<div class="user_show_cv">
+<div class="show_cv_welcome"><%= @article.title %></div>
+  <div class="edit_delete_cv">
+    <%= link_to "Edytuj nazwę CV", edit_article_path(@article), class: "edit_delete_button" %> |
+    <%= link_to "Usuń CV", article_path(@article), class: "edit_delete_button", data: {
+      turbo_method: :delete,
+      turbo_confirm: "Na pewno chcesz usunąć to CV?"
+    } %>
+  </div>
 
 <% @user = User.find_by(id: @article.user_id) %>
+<!--  <div class="contact_info_box">-->
+    <%#= render partial: "contact_infos/show_contact_infos", locals: { local_user: current_user }%>
+<!--  </div><br>-->
 
-<%= render partial: "contact_infos/show_contact_infos", locals: { local_user: current_user } %>
-<%= link_to "Dodaj dane do swojego CV", add_stuff_article_path(@article) %>
+<!--  <div class="experience">-->
+<!--    <h3>Doświadczenie zawodowe</h3>-->
+    <%#= render partial: "experiences/show_exp" %>
+<!--  </div>-->
+<!--  <div class="education">-->
+<!--    <h3>Edukacja</h3>-->
+    <%#= render partial: "educations/show_education" %>
+<!--  </div>-->
+<!--  <div class="languages">-->
+<!--    <h3>Języki</h3>-->
+    <%#= render partial: "languages/show_lang" %>
+<!--  </div>-->
+<!--  <div class="skills">-->
+<!--    <h3>Umiejętności</h3>-->
+    <%#= render partial: "skills/show_skill" %>
+<!--  </div>-->
+<!--  <div class="interests">-->
+<!--    <h3>Zainteresowania:</h3>-->
+    <%#= render partial: "interests/show_interest" %>
+<!--  </div>-->
+</div>
 
-<h3>Doświadczenie zawodowe</h3>
-<%= render partial: "experiences/show_exp" %>
-<h3>Edukacja</h3>
-<%= render partial: "educations/show_education" %>
-<h3>Języki</h3>
-<%= render partial: "languages/show_lang" %>
-<h3>Umiejętności</h3>
-<%= render partial: "skills/show_skill" %>
-<h3>Zainteresowania:</h3>
-<%= render partial: "interests/show_interest" %>
+<div class="accordion" id="myAccordion">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button type="button" class="accordion-button collapsed" id="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseOne">Doświadczenie zawodowe</button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
+      <div class="card-body">
+        <div class="add_stuff">
+          <%= render partial: "experiences/add_exp" %>
+        </div>
+        <%= render partial: "experiences/show_exp" %>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button type="button" class="accordion-button collapsed" id="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">Umiejętności</button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
+      <div class="card-body">
+        <%= render partial: "skills/add_skill" %>
+        <%= render partial: "skills/show_skill" %>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingThree">
+      <button type="button" class="accordion-button collapsed" id="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseThree">Edukacja</button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
+      <div class="card-body">
+        <%= render partial: "educations/add_education" %>
+        <%= render partial: "educations/show_education" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingFour">
+      <button type="button" class="accordion-button collapsed" id="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseFour">Języki obce</button>
+    </h2>
+    <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
+      <div class="card-body">
+        <%= render partial: "languages/add_lang" %>
+        <%= render partial: "languages/show_lang" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingFive">
+      <button type="button" class="accordion-button collapsed" id="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseFive">Zainteresowania</button>
+    </h2>
+    <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
+      <div class="card-body">
+        <%= render partial: "interests/add_interest" %>
+        <% if @article.interests.present? %>
+          <%= render partial: "interests/show_interest" %>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  let popup = document.getElementById("popup");
+
+  function openPopup(){
+    popup.classList.add("open-popup");
+  }
+  function closePopup(){
+      console.log("test");
+    popup.remove();
+  }
+</script>
+
+<!-- <%#= link_to "Dodaj dane do swojego CV", add_stuff_article_path(@article) %><br>-->
+<!--<div class="show_cv_msg">Dodaj dane do swojego CV</div>-->
+<!--<div class="big_button" onclick="openPopup()">-->
+<!--  Doświadczenie zawodowe-->
+<!--  <div class="popup" id="popup">-->
+    <%#= render partial: "experiences/add_exp" %>
+<!--    <button class="close_popup_btn" onclick="closePopup()">-->
+<!--      Zamknij-->
+<!--    </button>-->
+<!--  </div>-->
+<!--</div><br>-->
+<%#= render partial: "experiences/show_exp" %>
+<!--<div class="big_button">-->
+<!--  Umiejętności-->
+  <%#= render partial: "skills/show_skill" %>
+<!--</div><br>-->
+<!--<div class="big_button">-->
+<!--  Edukacja-->
+  <%#= render partial: "educations/show_education" %>
+<!--</div><br>-->
+<!--<div class="big_button">-->
+<!--  Języki obce-->
+  <%#= render partial: "languages/show_lang" %>
+<!--</div><br>-->
+<!--<div class="big_button">-->
+<!--  Zainteresowania-->
+  <%#= render partial: "interests/show_interest" %>
+<!--</div>-->

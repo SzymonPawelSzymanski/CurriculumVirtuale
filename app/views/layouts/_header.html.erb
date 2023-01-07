@@ -1,0 +1,42 @@
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <%= stylesheet_link_tag "index_page", "data-turbo-track": "reload" %>
+</head>
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+      <div class="navbar-main_btn"><%= link_to "CurriculumVirtuale",root_path %></div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page">
+          <%= link_to "Utwórz CV",new_article_path %>
+        </a>
+        <a class="nav-link">
+          <%= link_to "Dane kontaktowe",index_contact_infos_path %>
+        </a>
+        <a class="nav-link">
+          <%= link_to "Edytuj profil", edit_user_registration_path %>
+        </a>
+        <a class="nav-link">
+          <%= link_to "Wyloguj", destroy_user_session_path, method: :delete %>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!--<div class="navbar">-->
+
+  <%#= link_to "Utwórz CV",new_article_path %>
+  <%#= link_to "Dane kontaktowe",index_contact_infos_path %>
+<!--  <div class="login_buttons">-->
+  <%#= link_to "Edytuj profil", edit_user_registration_path %>
+  <%#= link_to "Wyloguj", destroy_user_session_path, method: :delete %>
+<!--  </div>-->
+<!--</div>-->
+<!--<div>-->
+  <%#= link_to "<<", :back, :class=>"previous" %>
+<!--</div>-->

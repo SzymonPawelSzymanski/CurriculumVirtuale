@@ -1,13 +1,15 @@
 <% @article.languages.each do |language| %>
-  <ul>
-    <strong><%= language.language %></strong><br>
-    Poziom w mowie: <%= language.speaking_level %>
-    <br>
-    Poziom w piśmie: <%= language.writing_level %>
-    <br>
-    <%= link_to "Usuń język", [language.article, language], data: {
-      turbo_method: :delete,
-      turbo_confirm: "Na pewno chcesz usunąć ten język?"
-    } %> <br>
-  </ul>
+  <% if language.language != nil %>
+     <div class="stuff_box">
+       <strong><%= language.language %></strong><br>
+       Poziom w mowie: <%= language.speaking_level %>
+       <br>
+       Poziom w piśmie: <%= language.writing_level %>
+       <br>
+       <%= link_to "Usuń język", [language.article, language], class: "delete_stuff_button", data: {
+         turbo_method: :delete,
+         turbo_confirm: "Na pewno chcesz usunąć ten język?"
+       } %> <br>
+     </div>
+        <% end %>
 <% end %>

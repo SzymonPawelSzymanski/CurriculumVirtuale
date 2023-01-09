@@ -5,6 +5,7 @@
 <div class="user_show_cv">
 <div class="show_cv_welcome"><%= @article.title %></div>
   <div class="edit_delete_cv">
+    <%= link_to "Zaprezentuj swoje CV", present_cv_path(@article), class: "edit_delete_button",  target: :_blank %> |
     <%= link_to "Edytuj nazwę CV", edit_article_path(@article), class: "edit_delete_button" %> |
     <%= link_to "Usuń CV", article_path(@article), class: "edit_delete_button", data: {
       turbo_method: :delete,

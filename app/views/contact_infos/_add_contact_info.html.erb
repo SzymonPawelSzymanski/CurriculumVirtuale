@@ -1,27 +1,15 @@
 <h2>Dodaj swoje dane i informacje kontaktowe:</h2>
 <% @user = local_user %>
 <%= form_with model: [ local_user, local_user.build_contact_info ] do |user| %>
-  <p>
     <%= user.label "Imię: " %><br>
     <%= user.text_field :name %>
-  </p>
-  <p>
     <%= user.label "Nazwisko" %><br>
     <%= user.text_field :surname %>
-  </p>
-  <p>
     <%= user.label "Nr telefonu" %><br>
     <%= user.number_field :phone %>
-  </p>
-  <p>
     <%= user.label "E-mail:" %><br>
     <%= user.text_field :email %>
-  </p>
-  <p>
     <%= user.label "Adres: " %><br>
     <%= user.text_field :address %>
-  </p>
-  <p>
     <%= user.submit %>
-  </p>
 <% end %>

@@ -1,0 +1,10 @@
+<% @user = User.find_by(id: @article.user_id) %>
+<div class="card card-body" id="contact_card">
+  <% Array(@user.contact_info).each_with_index do |user| %>
+    <strong><%= user.name%> <%= user.surname%></strong><br>
+      E-mail: <%= user.email%><br>
+      Telefon: <%= user.phone%><br>
+      Adres: <%= user.address%>
+</div>
+<% end %>
+

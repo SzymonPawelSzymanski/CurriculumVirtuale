@@ -8,6 +8,125 @@
     margin-top: 2%;
 }
 
+.section_header {
+    font-family: "Baloo 2", cursive;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 35px;
+    border-bottom: 2px solid #4A303C!important;
+    width: 55%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: #474747;
+}
+
+#contact_card {
+    color: #474747;
+    background-color: transparent;
+    font-weight: normal;
+    font-size: 35px;
+    /*border-radius: 0px 125px 0px 125px;*/
+    /*-moz-border-radius: 0px 125px 0px 125px;*/
+    /*-webkit-border-radius: 0px 125px 0px 125px;*/
+    width: 55%;
+    margin-right: auto!important;
+    margin-left: auto!important;
+    margin-top: 8%;
+    border: none!important;
+    text-shadow: none!important;
+    font-family: "Baloo 2", cursive;
+    text-transform: uppercase;
+}
+
+/* MIDDLE BOXES*/
+
+.middle_box_experience {
+    position: absolute;
+    margin-top: 17.6%;
+    margin-left: 26%;
+    margin-right: auto;
+    width: 47.5%;
+    height: 54%;
+    z-index:9;
+    /*border: 2px solid black;*/
+    overflow: auto;
+    background-color: #FFF1D2;
+    visibility: hidden;
+}
+
+.middle_box_education {
+    position: absolute;
+    margin-top: 17.6%;
+    margin-left: 26%;
+    margin-right: auto;
+    width: 47.5%;
+    height: 54%;
+    z-index:9;
+    /*border: 2px solid black;*/
+    overflow: auto;
+    background-color: #FFF1D2;
+    visibility: hidden;
+}
+
+.middle_box_skills {
+    position: absolute;
+    margin-top: 17.6%;
+    margin-left: 26%;
+    margin-right: auto;
+    width: 47.5%;
+    height: 54%;
+    z-index:9;
+    /*border: 2px solid black;*/
+    overflow: auto;
+    background-color: #FFF1D2;
+    visibility: hidden;
+}
+
+.middle_box_languages {
+    position: absolute;
+    margin-top: 17.6%;
+    margin-left: 26%;
+    margin-right: auto;
+    width: 47.5%;
+    height: 54%;
+    z-index:9;
+    /*border: 2px solid black;*/
+    overflow: auto;
+    background-color: #FFF1D2;
+    visibility: hidden;
+}
+
+.middle_box_contact {
+    position: absolute;
+    margin-top: 17.6%;
+    margin-left: 26%;
+    margin-right: auto;
+    width: 47.5%;
+    height: 54%;
+    z-index:9;
+    /*border: 2px solid black;*/
+    overflow: auto;
+    background-color: #FFF1D2;
+    visibility: hidden;
+}
+
+.middle_box_interests {
+    position: absolute;
+    margin-top: 17.6%;
+    margin-left: 26%;
+    margin-right: auto;
+    width: 47.5%;
+    height: 54%;
+    z-index:9;
+    /*border: 2px solid black;*/
+    overflow: auto;
+    background-color: #FFF1D2;
+    visibility: hidden;
+}
+
+
+
 /* ICON WHEEL POSITIONS SECTION */
 
 .menu-open-button {
@@ -48,8 +167,8 @@
 
 .hobby_icon {
     height: 85%;
-    margin-bottom: 45%;
-    margin-left: -5%;
+    margin-bottom: 46%;
+    margin-left: -6%;
     filter: invert(95%) sepia(99%) saturate(0%) hue-rotate(97deg) brightness(111%) contrast(100%);
 }
 
@@ -109,15 +228,21 @@
 }
 
 #experience_card {
-    color: white;
-    background-color: #339AA1;
-    border-radius: 0px 125px 0px 125px;
-    -moz-border-radius: 0px 125px 0px 125px;
-    -webkit-border-radius: 0px 125px 0px 125px;
-    width: 35%;
+    color: #474747;
+    background-color: transparent;
+    font-weight: normal;
+    /*border-radius: 0px 125px 0px 125px;*/
+    /*-moz-border-radius: 0px 125px 0px 125px;*/
+    /*-webkit-border-radius: 0px 125px 0px 125px;*/
+    width: 55%;
     margin-right: auto!important;
     margin-left: auto!important;
     border: none!important;
+    text-shadow: none!important;
+    font-family: "Baloo 2", cursive;
+    text-transform: uppercase;
+    border-radius: 0px;
+    border-bottom: 1px solid #4A303C!important;
 }
 
 .experience_button {
@@ -540,7 +665,8 @@ body {
     height: 330px;
     position: relative;
     /*background: #A8E8FF;*/
-    background-image: linear-gradient(92.88deg, #A8E8FF 18.16%, #FFFFFF 45.89%, #A8E8FF 64.72%);
+    /*background-image: linear-gradient(92.88deg, #A8E8FF 18.16%, #FFFFFF 45.89%, #A8E8FF 64.72%);*/
+    background-color: #2E2F30;
     border: 20px solid #474e5d;
     border-radius: 10px;
 }
@@ -776,12 +902,8 @@ body {
 }
 
 /* CARTOON SPEECH BOX*/
-.cartoon_box {
 
-}
-
-
-body p {
+.cartoon_box_style {
     width: 10%;
     margin-left: 12%;
     margin-top: 9%;
@@ -802,7 +924,7 @@ body p {
     font-family: "Baloo 2", cursive;
 // border: 1px solid #c8c8a9;
 }
-body p:after {
+.cartoon_box_style:after {
     transform: translatey(0px);
     animation: float2 5s ease-in-out infinite;
     content: ".";

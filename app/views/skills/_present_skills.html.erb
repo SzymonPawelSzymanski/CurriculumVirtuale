@@ -1,0 +1,8 @@
+<div class="section_header">Umiejętności</div>
+<% @article.skills.each do |skill| %>
+  <% if skill.skill != nil %>
+    <div class="card card-body" id="experience_card">
+      <strong><%= skill.skill %></strong>
+    </div>
+  <% end %>
+<% end %>

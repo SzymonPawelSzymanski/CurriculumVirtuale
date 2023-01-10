@@ -1,0 +1,8 @@
+<div class="section_header">Zainteresowania</div>
+<% @article.interests.each do |interest| %>
+  <% if interest.interest != nil%>
+    <div class="card card-body" id="experience_card">
+      <strong><%= interest.interest %></strong>
+    </div>
+  <% end %>
+<% end %>

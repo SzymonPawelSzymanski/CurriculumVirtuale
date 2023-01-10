@@ -14,12 +14,12 @@
     <span class="lines line-3"></span>
   </label>
 
-  <a href="javascript:void(0)" class="menu-item blue" data-bs-toggle="tooltip" data-bs-title="Doświadczenie" onclick="changeScreenToExperience()"> <%= image_tag "experience_icon.png", class: "experience_icon" %> <i class="fa fa-anchor"></i> </a>
-  <a href="#" class="menu-item green" data-bs-toggle="tooltip" data-bs-title="Umiejętności"><%= image_tag "skill_icon.png", class: "skill_icon" %><i class="fa fa-coffee"></i> </a>
-  <a href="#" class="menu-item red" data-bs-toggle="tooltip" data-bs-title="Zainteresowania"><%= image_tag "hobby_icon.png", class: "hobby_icon" %><i class="fa fa-heart"></i> </a>
-  <a href="#" class="menu-item purple" data-bs-toggle="tooltip" data-bs-title="Dane kontaktowe"><%= image_tag "email_icon.png", class: "email_icon" %><i class="fa fa-microphone"></i> </a>
-  <a href="#" class="menu-item orange" data-bs-toggle="tooltip" data-bs-title="Języki"><%= image_tag "language_icon.png", class: "language_icon" %><i class="fa fa-star"></i> </a>
-  <a href="#" class="menu-item lightblue" data-bs-toggle="tooltip" data-bs-title="Edukacja"><%= image_tag "book_icon.png", class: "book_icon" %><i class="fa fa-diamond"></i> </a>
+  <a href="javascript:void(0)" class="menu-item blue" id="btn_experience" data-bs-toggle="tooltip" data-bs-title="Doświadczenie"> <%= image_tag "experience_icon.png", class: "experience_icon" %> <i class="fa fa-anchor"></i> </a>
+  <a href="javascript:void(0)" class="menu-item green" id="btn_skill" data-bs-toggle="tooltip" data-bs-title="Umiejętności"> <%= image_tag "skill_icon.png", class: "skill_icon" %> <i class="fa fa-coffee"></i> </a>
+  <a href="javascript:void(0)" class="menu-item red" id="btn_interest" data-bs-toggle="tooltip" data-bs-title="Zainteresowania"> <%= image_tag "hobby_icon.png", class: "hobby_icon" %> <i class="fa fa-heart"></i> </a>
+  <a href="javascript:void(0)" class="menu-item purple" id="btn_contact" data-bs-toggle="tooltip" data-bs-title="Dane kontaktowe"> <%= image_tag "email_icon.png", class: "email_icon" %> <i class="fa fa-microphone"></i> </a>
+  <a href="javascript:void(0)" class="menu-item orange" id="btn_language" data-bs-toggle="tooltip" data-bs-title="Języki"> <%= image_tag "language_icon.png", class: "language_icon" %> <i class="fa fa-star"></i> </a>
+  <a href="javascript:void(0)" class="menu-item lightblue" id="btn_education" data-bs-toggle="tooltip" data-bs-title="Edukacja"> <%= image_tag "book_icon.png", class: "book_icon" %> <i class="fa fa-diamond"></i> </a>
 </nav>
 
 <!--<div class="education_box">-->
@@ -32,7 +32,33 @@
   <%= @user.contact_info.name + " " + @user.contact_info.surname %>
 </div>
 
-<link href="https://fonts.googleapis.com/css?family=Baloo+2:400,800&display=swap" rel="stylesheet" class="cartoon_box">
+<div class="cartoon_box_div">
+  <link href="https://fonts.googleapis.com/css?family=Baloo+2:400,800&display=swap" rel="stylesheet" class="cartoon_box">
+</div>
+
+<div class="middle_box_experience" id="middle_box_experience_id">
+  <%= render partial: "experiences/present_exp" %>
+</div>
+
+<div class="middle_box_education" id="middle_box_education_id">
+  <%= render partial: "educations/present_educations" %>
+</div>
+
+<div class="middle_box_skills" id="middle_box_skill_id">
+  <%= render partial: "skills/present_skills" %>
+</div>
+
+<div class="middle_box_languages" id="middle_box_languages_id">
+  <%= render partial: "languages/present_languages" %>
+</div>
+
+<div class="middle_box_interests" id="middle_box_interests_id">
+  <%= render partial: "interests/present_interests" %>
+</div>
+
+<div class="middle_box_contact" id="middle_box_contact_id">
+  <%= render partial: "contact_infos/present_contact_info" %>
+</div>
 
 <div class="man_image">
   <%= image_tag "brown_suit_ok_hand.png", class: "brown_suit_man" %>
@@ -64,14 +90,79 @@
 <!--  </div>-->
 
 <script>
-    document.body.insertAdjacentHTML("afterbegin", "<p>Naciśnij okrągły przycisk menu!</p>");
+    document.body.insertAdjacentHTML("afterbegin", "<p class='cartoon_box_style'>Naciśnij okrągły przycisk menu!</p>");
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
     const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
-    let experienceHtml = document.getElementsById("woman_image_id").innerText;
+    let btn_experience = document.getElementById("btn_experience");
+    let div_experience = document.getElementById("middle_box_experience_id");
 
-    function changeScreenToExperience() {
-        // document.getElementById("screen_monitor_to_change").innerHTML = "No część";
-        console.log("Kliknąłeś przycisk Experience");
-    }
+    let btn_education = document.getElementById("btn_education");
+    let div_education = document.getElementById("middle_box_education_id");
+
+    let btn_skill = document.getElementById("btn_skill");
+    let div_skill = document.getElementById("middle_box_skill_id");
+
+    let btn_language = document.getElementById("btn_language");
+    let div_language = document.getElementById("middle_box_languages_id");
+
+    let btn_interest = document.getElementById("btn_interest");
+    let div_interest = document.getElementById("middle_box_interests_id");
+
+    let btn_contact_info = document.getElementById("btn_contact");
+    let div_contact_info = document.getElementById("middle_box_contact_id");
+
+    btn_experience.addEventListener('click', ()=>{
+        div_experience.style.visibility='visible';
+        div_education.style.visibility='hidden';
+        div_skill.style.visibility='hidden';
+        div_language.style.visibility='hidden';
+        div_interest.style.visibility='hidden';
+        div_contact_info.style.visibility='hidden';
+    });
+
+    btn_education.addEventListener('click', ()=>{
+        div_experience.style.visibility='hidden';
+        div_education.style.visibility='visible';
+        div_skill.style.visibility='hidden';
+        div_language.style.visibility='hidden';
+        div_interest.style.visibility='hidden';
+        div_contact_info.style.visibility='hidden';
+    });
+
+    btn_skill.addEventListener('click', ()=>{
+        div_experience.style.visibility='hidden';
+        div_education.style.visibility='hidden';
+        div_skill.style.visibility='visible';
+        div_language.style.visibility='hidden';
+        div_interest.style.visibility='hidden';
+        div_contact_info.style.visibility='hidden';
+    });
+
+    btn_language.addEventListener('click', ()=>{
+        div_experience.style.visibility='hidden';
+        div_education.style.visibility='hidden';
+        div_skill.style.visibility='hidden';
+        div_language.style.visibility='visible';
+        div_interest.style.visibility='hidden';
+        div_contact_info.style.visibility='hidden';
+    });
+
+    btn_interest.addEventListener('click', ()=>{
+        div_experience.style.visibility='hidden';
+        div_education.style.visibility='hidden';
+        div_skill.style.visibility='hidden';
+        div_language.style.visibility='hidden';
+        div_interest.style.visibility='visible';
+        div_contact_info.style.visibility='hidden';
+    });
+
+    btn_contact_info.addEventListener('click', ()=>{
+        div_experience.style.visibility='hidden';
+        div_education.style.visibility='hidden';
+        div_skill.style.visibility='hidden';
+        div_language.style.visibility='hidden';
+        div_interest.style.visibility='hidden';
+        div_contact_info.style.visibility='visible';
+    });
 </script>

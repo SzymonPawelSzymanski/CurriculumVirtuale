@@ -1,0 +1,13 @@
+<% @article.languages.each do |language| %>
+  <ul>
+    <strong><%= language.language %></strong><br>
+    Poziom w mowie: <%= language.speaking_level %>
+    <br>
+    Poziom w piśmie: <%= language.writing_level %>
+    <br>
+    <%= link_to "Usuń język", [language.article, language], data: {
+      turbo_method: :delete,
+      turbo_confirm: "Na pewno chcesz usunąć ten język?"
+    } %> <br>
+  </ul>
+<% end %>

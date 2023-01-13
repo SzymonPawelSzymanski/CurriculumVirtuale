@@ -30,6 +30,8 @@ gem "jbuilder"
 # https://guides.railsgirls.com/devise
 gem "devise"
 
+gem "pry-rails"
+
 gem 'devise_token_auth', github: 'lynndylanhurley/devise_token_auth'
 
 # Use Redis adapter to run Action Cable in production

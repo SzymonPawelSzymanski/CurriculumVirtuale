@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  skip_before_action :verify_authenticity_token
   def index
     @articles = Article.all
   end
@@ -13,11 +14,12 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    @article.user_id = current_user.id
 
     if @article.save
       redirect_to @article
     else
-      render :new, status: :unprocessable_entity
+      render :new
     end
   end
 
@@ -42,8 +44,12 @@ class ArticlesController < ApplicationController
     redirect_to root_path, status: :see_other
   end
 
+  def add_stuff
+    @article = Article.find(params[:id])
+  end
+
   private
   def article_params
-  params.require(:article).permit(:title);
+  params.require(:article).permit(:title, :user_id);
   end
 end

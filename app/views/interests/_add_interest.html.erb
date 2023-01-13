@@ -1,0 +1,11 @@
+<h2>Dodaj zainteresowania:</h2>
+<%= form_with model: [ @article, @article.interests.build ] do |form| %>
+  <p>
+    <%= form.label "Zainteresowanie" %><br>
+    <%= form.text_field :interest %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

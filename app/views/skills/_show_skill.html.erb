@@ -1,0 +1,10 @@
+<% @article.skills.each do |skill| %>
+  <ul>
+    <strong><%= skill.skill %></strong><br>
+
+    <%= link_to "Usuń umiejętność", [skill.article, skill], data: {
+      turbo_method: :delete,
+      turbo_confirm: "Na pewno chcesz usunąć tą umiejętność?"
+    } %> <br>
+  </ul>
+<% end %>

@@ -1,0 +1,8 @@
+<h1>Twoje dane kontaktowe:</h1>
+
+<% if defined?(current_user.contact_info) == nil %>
+  <%= render partial: "contact_infos/add_contact_info", locals: { local_user: current_user }  %>
+<% else %>
+  <%= render partial: "contact_infos/show_contact_infos", locals: { local_user: current_user } %>
+  <%= link_to "Edytuj swoje dane", edit_contact_infos_path(@user) %>
+<% end %>

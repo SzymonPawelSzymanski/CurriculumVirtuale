@@ -1,0 +1,31 @@
+<h2>Dodaj doświadczenie zawodowe:</h2>
+<%= form_with model: [ @article, @article.experiences.build ] do |form| %>
+  <p>
+    <%= form.label "Stanowisko" %><br>
+    <%= form.text_field :worked_as %>
+  </p>
+  <p>
+    <%= form.label "Nazwa Firmy" %><br>
+    <%= form.text_field :company %>
+  </p>
+  <p>
+    <%= form.label "Data rozpoczęcia" %><br>
+    <%= form.date_field :begin_date %>
+  </p>
+  <p>
+    <%= form.label "Data zakończenia" %><br>
+    <%= form.date_field :finish_date %>
+  </p>
+  <p>
+    <%= form.label "Pracuję tam obecnie" %><br>
+    <%= form.check_box :currently %>
+  </p>
+  <p>
+<!--    <%# render partial: "duties/add_duty" %><br>-->
+    <%= form.label "Obowiązki:" %><br>
+    <%= form.text_area :job_duties %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

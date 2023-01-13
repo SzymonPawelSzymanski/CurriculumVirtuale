@@ -1,0 +1,26 @@
+<% @article.experiences.each do |experience| %>
+  <p>
+    <strong>Stanowisko:</strong>
+    <%= experience.worked_as %>
+  </p>
+  <p>
+    <strong>Firma:</strong>
+    <%= experience.company %>
+  </p>
+  <p>
+    <strong>Data rozpoczęcia:</strong>
+    <%= experience.begin_date %>
+  </p>
+  <p>
+    <strong>Data zakończenia:</strong>
+    <%= experience.finish_date %>
+  </p>
+  <p>
+    <strong>Obecnie pracuje</strong>
+    <%= experience.currently %>
+  </p>
+  <p>
+    <strong>Obowiązki:</strong>
+    <%= experience.job_duties %>
+  </p>
+<% end %>

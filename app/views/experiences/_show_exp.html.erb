@@ -1,0 +1,19 @@
+<% @article.experiences.each do |experience| %>
+  <ul>
+    <strong><%= experience.worked_as %></strong><br>
+    <%= experience.company %><br>
+  <%= experience.begin_date %> -
+  <%= experience.finish_date %><br>
+  <% if experience.currently %>
+    Pracuję tam obecnie.
+  <% end %><br>
+    Obowiązki:<br>
+  <%= experience.job_duties %><br>
+<!--  <%#= render partial: "duties/show_duties" %><br>-->
+    <br>
+  <%= link_to "Usuń doświadczenie", [experience.article, experience], data: {
+    turbo_method: :delete,
+    turbo_confirm: "Na pewno chcesz usunąć to doświadczenie?"
+  } %> <br>
+  </ul>
+<% end %>

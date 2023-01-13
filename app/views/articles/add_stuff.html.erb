@@ -1,0 +1,7 @@
+<h1>Dodaj elementy do swojego CV</h1>
+<%= render partial: "contact_infos/show_contact_infos", locals: { local_user: current_user } %>
+<%= render partial: "experiences/add_exp", article: @article %>
+<%= render partial: "educations/add_education", article: @article %>
+<%= render partial: "languages/add_lang", article: @article %>
+<%= render partial: "skills/add_skill", article: @article %>
+<%= render partial: "interests/add_interest", article: @article %>

@@ -1,0 +1,11 @@
+<h2>Dodaj swoje obowiązki:</h2>
+<% binding.pry %>
+
+<%= form_with model: [ @experience, @experience.duties.build ] do |form| %>
+  <p>
+    <%= form.text_field :duty_text %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

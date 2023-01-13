@@ -1,7 +1,6 @@
 <% if current_user.admin %>
   <p> Witaj Pan admin!
   Oto użytkownicy twojego portalu!</p>
-
   <ul>
     <% @users.each do |user| %>
       <li>
@@ -10,7 +9,6 @@
       </li>
     <% end %>
     <br>
-    <%= link_to "Powrót do strony głównej", root_path %>
   </ul>
   <% else %>
   <% redirect_to root_path %>

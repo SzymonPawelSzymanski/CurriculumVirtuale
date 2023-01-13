@@ -1,9 +1,11 @@
 <% @article.interests.each do |interest| %>
-  <ul>
-    <strong><%= interest.interest %></strong><br>
-    <%= link_to "Usuń zainteresowanie", [interest.article, interest], data: {
-      turbo_method: :delete,
-      turbo_confirm: "Na pewno chcesz usunąć to zainteresowanie?"
-    } %> <br>
-  </ul>
+  <% if interest.interest != nil%>
+    <div class="stuff_box">
+      <strong><%= interest.interest %></strong><br>
+      <%= link_to "Usuń zainteresowanie", [interest.article, interest], class: "delete_stuff_button", data: {
+        turbo_method: :delete,
+        turbo_confirm: "Na pewno chcesz usunąć to zainteresowanie?"
+      } %> <br>
+    </div>
+  <% end %>
 <% end %>

@@ -1,6 +1,7 @@
+<div class="section_header">Edukacja</div>
 <% @article.educations.each do |education| %>
+  <div class="card card-body" id="experience_card">
   <% if education.school != nil %>
-    <div class="stuff_box">
       <strong><%= education.school %></strong><br>
       <%= education.field_of_study %><br>
       <%= education.specialization %><br>
@@ -8,11 +9,7 @@
       <%= education.finish_date %><br>
       <% if education.currently %>
         Studiuję/uczę się tam obecnie.
-      <% end %><br><br>
-      <%= link_to "Usuń edukację", [education.article, education], class: "delete_stuff_button", data: {
-        turbo_method: :delete,
-        turbo_confirm: "Na pewno chcesz usunąć tą edukację?"
-      } %> <br>
+      <% end %><br>
     </div>
   <% end %>
 <% end %>

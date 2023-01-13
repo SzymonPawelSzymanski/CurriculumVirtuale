@@ -1,0 +1,11 @@
+<div class="section_header">Języki</div>
+<% @article.languages.each do |language| %>
+  <% if language.language != nil %>
+    <div class="card card-body" id="experience_card">
+      <strong><%= language.language %></strong><br>
+      Poziom w mowie: <%= language.speaking_level %>
+      <br>
+      Poziom w piśmie: <%= language.writing_level %>
+    </div>
+  <% end %>
+<% end %>

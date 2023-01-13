@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  layout 'application', :except => [:present_cv]
+  layout 'present_cv_layout', :only => [:present_cv]
   skip_before_action :verify_authenticity_token
   def index
     @articles = Article.all
@@ -45,6 +47,10 @@ class ArticlesController < ApplicationController
   end
 
   def add_stuff
+    @article = Article.find(params[:id])
+  end
+
+  def present_cv
     @article = Article.find(params[:id])
   end
 

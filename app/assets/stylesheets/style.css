@@ -1,0 +1,10 @@
+body {
+    background-color: #F1EFDC!important;
+    /*color: white;*/
+    font-family: 'Roboto Condensed', sans-serif;
+    margin-top: 80px;
+}
+
+.alerts_bar {
+    margin-bottom: 40px;
+}

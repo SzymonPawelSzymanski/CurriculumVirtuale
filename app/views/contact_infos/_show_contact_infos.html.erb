@@ -1,13 +1,20 @@
-  <p>
+<p>
     <% Array(local_user.contact_info).each_with_index do |user| %>
-      <strong>Imię i nazwisko:</strong>
-      <%= user.name%>
-      <%= user.surname%><br>
+      <div class="contact_info">
+        <%= user.name%>
+        <%= user.surname%>
+      </div>
+      <div class="contact_info">
       <strong>E-mail:</strong>
-      <%= user.email%><br>
+      <%= user.email%>
+      </div>
+      <div class="contact_info">
       <strong>Telefon:</strong>
-      <%= user.phone%><br>
-      <strong>Adres:</strong>
-      <%= user.address%>
+          <%= user.phone%>
+      </div>
+      <div class="contact_info">
+        <strong>Adres:</strong>
+        <%= user.address%>
+      </div>
     <% end %>
-  </p>
+</p>

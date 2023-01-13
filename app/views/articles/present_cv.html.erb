@@ -1,0 +1,174 @@
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</head>
+
+<% @user = current_user%>
+<% @user = User.find_by(id: @article.user_id) %>
+<% @contact_info = ContactInfo.find_by(id: @article.user_id)%>
+
+
+<nav class="menu">
+  <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open" />
+  <label class="menu-open-button" for="menu-open">
+    <span class="lines line-1"></span>
+    <span class="lines line-2"></span>
+    <span class="lines line-3"></span>
+  </label>
+
+  <a href="javascript:void(0)" class="menu-item blue" id="btn_experience" data-bs-toggle="tooltip" data-bs-title="Doświadczenie"> <%= image_tag "experience_icon.png", class: "experience_icon" %> <i class="fa fa-anchor"></i> </a>
+  <a href="javascript:void(0)" class="menu-item green" id="btn_skill" data-bs-toggle="tooltip" data-bs-title="Umiejętności"> <%= image_tag "skill_icon.png", class: "skill_icon" %> <i class="fa fa-coffee"></i> </a>
+  <a href="javascript:void(0)" class="menu-item red" id="btn_interest" data-bs-toggle="tooltip" data-bs-title="Zainteresowania"> <%= image_tag "hobby_icon.png", class: "hobby_icon" %> <i class="fa fa-heart"></i> </a>
+  <a href="javascript:void(0)" class="menu-item purple" id="btn_contact" data-bs-toggle="tooltip" data-bs-title="Dane kontaktowe"> <%= image_tag "email_icon.png", class: "email_icon" %> <i class="fa fa-microphone"></i> </a>
+  <a href="javascript:void(0)" class="menu-item orange" id="btn_language" data-bs-toggle="tooltip" data-bs-title="Języki"> <%= image_tag "language_icon.png", class: "language_icon" %> <i class="fa fa-star"></i> </a>
+  <a href="javascript:void(0)" class="menu-item lightblue" id="btn_education" data-bs-toggle="tooltip" data-bs-title="Edukacja"> <%= image_tag "book_icon.png", class: "book_icon" %> <i class="fa fa-diamond"></i> </a>
+</nav>
+
+<!--<div class="education_box">-->
+<!--  <button class="education_button">-->
+<!--    Edukacja-->
+<!--  </button>-->
+<!--</div>-->
+
+<div class="name_surname">
+  <% if @user.contact_info.present? %>
+  <%= @user.contact_info.name + " " + @user.contact_info.surname %>
+  <% end %>
+</div>
+
+<div class="cartoon_box_div">
+  <link href="https://fonts.googleapis.com/css?family=Baloo+2:400,800&display=swap" rel="stylesheet" class="cartoon_box">
+</div>
+
+<div class="middle_box_experience" id="middle_box_experience_id">
+  <%= render partial: "experiences/present_exp" %>
+</div>
+
+<div class="middle_box_education" id="middle_box_education_id">
+  <%= render partial: "educations/present_educations" %>
+</div>
+
+<div class="middle_box_skills" id="middle_box_skill_id">
+  <%= render partial: "skills/present_skills" %>
+</div>
+
+<div class="middle_box_languages" id="middle_box_languages_id">
+  <%= render partial: "languages/present_languages" %>
+</div>
+
+<div class="middle_box_interests" id="middle_box_interests_id">
+  <%= render partial: "interests/present_interests" %>
+</div>
+
+<div class="middle_box_contact" id="middle_box_contact_id">
+  <%= render partial: "contact_infos/present_contact_info" %>
+</div>
+
+<div class="man_image">
+  <%= image_tag "brown_suit_ok_hand.png", class: "brown_suit_man" %>
+</div>
+<div class="middle_content">
+  <div class="container">
+    <div class="screen monitor" id="screen_monitor_to_change">
+      <div class="content">
+      </div>
+      <div class="base">
+        <div class="grey-shadow"></div>
+        <div class="foot top"></div>
+        <div class="foot bottom"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="woman_image" id="woman_image_id">
+  <%= image_tag "yellow_jacket_woman.png", class: "yellow_jacket_woman"%>
+</div>
+
+
+<!--<div class="experience_box">-->
+<!--    <button class="experience_button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">-->
+<!--      Doświadczenie-->
+<!--    </button>-->
+<!--  <div class="collapse" id="collapseExample">-->
+      <%#= render partial: "experiences/present_exp" %>
+<!--  </div>-->
+
+<script>
+
+    document.body.insertAdjacentHTML("afterbegin", "<p class='cartoon_box_style'>Naciśnij okrągły przycisk menu!</p>");
+
+
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
+    let btn_experience = document.getElementById("btn_experience");
+    let div_experience = document.getElementById("middle_box_experience_id");
+
+    let btn_education = document.getElementById("btn_education");
+    let div_education = document.getElementById("middle_box_education_id");
+
+    let btn_skill = document.getElementById("btn_skill");
+    let div_skill = document.getElementById("middle_box_skill_id");
+
+    let btn_language = document.getElementById("btn_language");
+    let div_language = document.getElementById("middle_box_languages_id");
+
+    let btn_interest = document.getElementById("btn_interest");
+    let div_interest = document.getElementById("middle_box_interests_id");
+
+    let btn_contact_info = document.getElementById("btn_contact");
+    let div_contact_info = document.getElementById("middle_box_contact_id");
+
+    btn_experience.addEventListener('click', ()=>{
+        div_experience.style.visibility='visible';
+        div_education.style.visibility='hidden';
+        div_skill.style.visibility='hidden';
+        div_language.style.visibility='hidden';
+        div_interest.style.visibility='hidden';
+        div_contact_info.style.visibility='hidden';
+    });
+
+    btn_education.addEventListener('click', ()=>{
+        div_experience.style.visibility='hidden';
+        div_education.style.visibility='visible';
+        div_skill.style.visibility='hidden';
+        div_language.style.visibility='hidden';
+        div_interest.style.visibility='hidden';
+        div_contact_info.style.visibility='hidden';
+    });
+
+    btn_skill.addEventListener('click', ()=>{
+        div_experience.style.visibility='hidden';
+        div_education.style.visibility='hidden';
+        div_skill.style.visibility='visible';
+        div_language.style.visibility='hidden';
+        div_interest.style.visibility='hidden';
+        div_contact_info.style.visibility='hidden';
+    });
+
+    btn_language.addEventListener('click', ()=>{
+        div_experience.style.visibility='hidden';
+        div_education.style.visibility='hidden';
+        div_skill.style.visibility='hidden';
+        div_language.style.visibility='visible';
+        div_interest.style.visibility='hidden';
+        div_contact_info.style.visibility='hidden';
+    });
+
+    btn_interest.addEventListener('click', ()=>{
+        div_experience.style.visibility='hidden';
+        div_education.style.visibility='hidden';
+        div_skill.style.visibility='hidden';
+        div_language.style.visibility='hidden';
+        div_interest.style.visibility='visible';
+        div_contact_info.style.visibility='hidden';
+    });
+
+    btn_contact_info.addEventListener('click', ()=>{
+        div_experience.style.visibility='hidden';
+        div_education.style.visibility='hidden';
+        div_skill.style.visibility='hidden';
+        div_language.style.visibility='hidden';
+        div_interest.style.visibility='hidden';
+        div_contact_info.style.visibility='visible';
+    });
+</script>

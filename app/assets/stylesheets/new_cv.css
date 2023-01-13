@@ -1,0 +1,60 @@
+.new_cv_form{
+    /*background-color: #93329E;*/
+    /*border: 15px black;*/
+    /*padding: 50px;*/
+    padding-left: 50px;
+    padding-top: 30px;
+    padding-right: 50px;
+    padding-bottom: 20px;
+    margin: 30px;
+    text-align: center;
+    /*display: flex;*/
+    justify-content: center;
+    /*margin-top: -58px;*/
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: bold;
+    font-size: 58px;
+    /*text-shadow: 1px 1.5px 2px gray;*/
+}
+
+.cv_title {
+    font-size: 45px;
+}
+
+.submit_button{
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #9D5353;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 1px 7px 4px #999;
+    margin-bottom: 10px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: bold;
+}
+
+.submit_button:hover {
+    background-color: #BF8B67;
+}
+
+.submit_button:active {
+    background-color: #BF8B67;
+    box-shadow: 1px 5px 4px #666;
+    transform: translateY(4px);
+}
+
+#article_title{
+    width:50%;
+    aspect-ratio: 10/1;
+    border-radius: 15px;
+    padding: 5px;
+    box-shadow: 1px 1px 4px #455EB5;
+}
+
+

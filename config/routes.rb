@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get "article/:id/add_stuff" => "articles#add_stuff", :as => "add_stuff_article"
   get "user/:id/contact_info/edit" => "contact_infos#edit", :as => "edit_contact_infos"
   get "contact_infos/index" => "contact_infos#index", :as => "index_contact_infos"
+  get "article/:id/present_cv" => "articles#present_cv", :as => "present_cv"
 
   resources :articles do
     resources :experiences

@@ -1,14 +1,14 @@
 <%= form_with model: @article do |form| %>
-  <div>
+  <div class="cv_title">
      <%= form.label "Tytuł: " %>
+    <div class="title_text_box">
     <%= form.text_field :title %>
     <% @article.errors.full_messages_for(:title).each do |message| %>
       <div><%= message %></div>
     <% end %>
+    </div>
   </div>
   <br>
-  <div>
-    <%= form.submit %>
-  </div>
+    <%= form.submit("Zaczynajmy!", class: "submit_button") %>
   <br>
 <% end %>

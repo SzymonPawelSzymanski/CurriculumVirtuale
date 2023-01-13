@@ -4,6 +4,7 @@
 
 <% @user = current_user%>
 <% @user = User.find_by(id: @article.user_id) %>
+<% @contact_info = ContactInfo.find_by(id: @article.user_id)%>
 
 
 <nav class="menu">
@@ -29,7 +30,9 @@
 <!--</div>-->
 
 <div class="name_surname">
+  <% if @user.contact_info.present? %>
   <%= @user.contact_info.name + " " + @user.contact_info.surname %>
+  <% end %>
 </div>
 
 <div class="cartoon_box_div">
@@ -90,7 +93,10 @@
 <!--  </div>-->
 
 <script>
+
     document.body.insertAdjacentHTML("afterbegin", "<p class='cartoon_box_style'>Naciśnij okrągły przycisk menu!</p>");
+
+
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
     const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 

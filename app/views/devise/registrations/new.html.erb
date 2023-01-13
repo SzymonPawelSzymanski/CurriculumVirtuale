@@ -10,21 +10,22 @@
   </div>
 
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label "Hasło" %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <em>(minimum <%= @minimum_password_length %> znaków)</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label "Potwierdź hasło" %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up", class: "submit_button" %>
+    <%= f.submit "Zarejestruj się", class: "submit_button" %>
   </div>
 <% end %>
+  <%= render "devise/shared/links", class: "submit_button" %>
 </div>
-<%= render "devise/shared/links" %>
+

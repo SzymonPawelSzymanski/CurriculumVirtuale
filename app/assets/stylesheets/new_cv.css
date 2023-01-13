@@ -14,7 +14,7 @@
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: bold;
     font-size: 58px;
-    text-shadow: 1px 1.5px 2px gray;
+    /*text-shadow: 1px 1.5px 2px gray;*/
 }
 
 .cv_title {
@@ -30,7 +30,7 @@
     text-decoration: none;
     outline: none;
     color: #fff;
-    background-color: #673FD7;
+    background-color: #9D5353;
     border: none;
     border-radius: 15px;
     box-shadow: 1px 7px 4px #999;
@@ -40,11 +40,11 @@
 }
 
 .submit_button:hover {
-    background-color: #673FA0;
+    background-color: #BF8B67;
 }
 
 .submit_button:active {
-    background-color: #455EB5;
+    background-color: #BF8B67;
     box-shadow: 1px 5px 4px #666;
     transform: translateY(4px);
 }

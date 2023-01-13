@@ -16,7 +16,7 @@
   <% end %>
 
   <div class="field">
-    Hasło</br> <i>(pozostaw to pole puste, jeżeli nie chcesz zmieniać hasła)</i><br />
+    Nowe hasło</br> <i>(pozostaw to pole puste, jeżeli nie chcesz zmieniać hasła)</i><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
     <% if @minimum_password_length %>
       <br />
@@ -25,7 +25,7 @@
   </div>
 
   <div class="field">
-    Potwierdź hasło<br />
+    Potwierdź nowe hasło<br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 

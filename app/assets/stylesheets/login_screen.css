@@ -6,6 +6,20 @@
     margin-top: -10px;
 }
 
+.login_screen a {
+    text-decoration: none;
+}
+
+.login_screen a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.login_screen a:active {
+    text-decoration: none;
+    color: white;
+}
+
 .register_links {
     text-align: center;
     margin: 10px;

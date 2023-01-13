@@ -3,7 +3,7 @@
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 48px;
     text-align: center;
-    text-shadow: 1px 1px 1px darkgray;
+    /*text-shadow: 1px 1px 1px darkgray;*/
     margin: 15px;
     margin-top: 2%;
 }
@@ -25,14 +25,14 @@
     color: #474747;
     background-color: transparent;
     font-weight: normal;
-    font-size: 35px;
+    font-size: 28px;
     /*border-radius: 0px 125px 0px 125px;*/
     /*-moz-border-radius: 0px 125px 0px 125px;*/
     /*-webkit-border-radius: 0px 125px 0px 125px;*/
     width: 55%;
     margin-right: auto!important;
     margin-left: auto!important;
-    margin-top: 8%;
+    margin-top: 3%;
     border: none!important;
     text-shadow: none!important;
     font-family: "Baloo 2", cursive;

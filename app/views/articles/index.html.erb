@@ -13,12 +13,14 @@
 <div class="welcome_msg">
   Witaj w Curriculum Virtuale!
 </div>
+<%@current_user_articles = @articles.where(user_id: current_user.id) %>
+<%# @current_user_contact_info = @contact_infos.where(user_id: current_user.id) %>
 
+<% if @current_user_articles.present?%>
 <div class="cv_list">
 Oto twoje CV:
 
   <dl>
-    <%@current_user_articles = @articles.where(user_id: current_user.id) %>
     <% @current_user_articles.each do |article| %>
       <dt>
       <div class="cv_listed">
@@ -36,8 +38,24 @@ Oto twoje CV:
 <!--    </div>-->
   <%# end %>
 </div>
+  <% else %>
+  <div class="cv_list" style="margin-top:5%; font-size: 35px">
+    Nie utworzyłeś jeszcze żadnego CV!<br>
+    Przejdź do zakładki 'Dane kontaktowe', aby dodać swoje dane, <br>
+    a następnie kliknij 'Utwórz CV', aby rozpocząć!
+  </div>
+  <% end %>
 <!--<div class="contact_info">-->
   <%#= render partial: "contact_infos/show_contact_infos", locals: { local_user: current_user } %>
 <!--</div>-->
+
+<container class="purple_suit_man">
+  <%= image_tag "purple_suit_man_ok_hand.png", id: "purple_suit_man_img"%>
+</container>
+
+<div class="brown_suit_woman">
+  <%= image_tag "brown_suit_woman.png", id: "brown_suit_woman_img"%>
+</div>
+
 
 </body>

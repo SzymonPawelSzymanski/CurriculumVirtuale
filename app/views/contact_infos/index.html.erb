@@ -3,12 +3,14 @@
 
 <div>
 <div class="contact_info_box">
-<% if defined?(current_user.contact_info) == nil %>
-  <%= render partial: "contact_infos/add_contact_info", locals: { local_user: current_user }  %>
+<% if current_user.contact_info.present? %>
+    <div class="form">
+      <%= render partial: "contact_infos/show_contact_infos", locals: { local_user: current_user }  %>
+    </div>
+    <%= link_to "Edytuj swoje dane", edit_contact_infos_path(@user), class: "contact_info_edit_button"%>
 <% else %>
-  <%= render partial: "contact_infos/show_contact_infos", locals: { local_user: current_user } %>
+  <%= render partial: "contact_infos/add_contact_info", locals: { local_user: current_user } %>
+</div>
+  <% end %>
 </div>
 
-  <%= link_to "Edytuj swoje dane", edit_contact_infos_path(@user), class: "contact_info_edit_button"%>
-</div>
-<% end %>
